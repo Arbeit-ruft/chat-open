@@ -1,0 +1,93 @@
+MyBoxLayout:
+
+
+<MyBoxLayout>
+    chat_input: chat_input
+    #chat_input_disabled:chat_input_disabled
+    orientation:'horizontal'
+    padding: '20sp'
+    spacing: '40sp'
+    #####Linke Seite########################################
+    MyBoxLayout_1:
+        orientation:'vertical'
+        spacing: '40sp'
+        size_hint:0.3,1
+        Button:
+            id: stelle
+            background_color: .7, .7, 1, 1
+            text:'Analyse Stelle'
+            on_press: root.on_button_stelle()
+
+
+        Button:
+            id: Ll
+            background_color: .7, .7, 1, 1
+            text:'Analyse Lebenslauf'
+            on_press: root.on_button_lebe()
+        Button:
+            background_color: .7, .7, 1, 1
+            text:'Marge'
+            #text:root.my_text
+    #####Rechte Seite########################################
+    #rechte sehr breite Seite
+    BoxLayout:
+        orientation:'vertical'
+        spacing: '20sp'
+        MyScreenManager:
+            size_hint: 1,0.1
+            id: screen_manager
+
+        TextInput:
+            id: chat_input
+            disabled: root.disabTI
+            text: root.text_stelle
+            on_text_validate: root.open_ok()
+
+        Button:
+            size_hint:1,0.1
+            text:'Ok'
+            on_press: root.open_ok()
+
+
+<MyScreenManager>:
+    FirstScreen:
+        name: 'first'
+    SecondScreen:
+        name: 'second'
+    TreeScreen:
+        name: 'tree'
+
+
+<FirstScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_1
+            text: 'Trage hier den API Schlüssel ein'
+            multiline:False
+            foreground_color:(0,0,0,1)
+        Button:
+            size_hint:0.1,1
+            text: 'OK'
+            on_release: root.api_validation(self.text)
+
+
+<SecondScreen>:
+    BoxLayout:
+        Label:
+            text: 'Sie sind mit dem OpenAi verbunden'
+
+
+<TreeScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_1
+            text: 'Trage hier den API Schlüssel ein'
+            multiline:False
+            foreground_color:(1,0,0,1)
+
+        Button:
+            size_hint:0.1,1
+            text: 'OK'
+            on_release: root.api_validation(self.text)
