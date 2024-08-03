@@ -1,0 +1,5 @@
+klick Analyse Stelle --> aktiviert großes Textfeld und Text erscheint "gebe hier den Text der aus der Stellenausschreibung ein"
+klick "Analyse Lebenslauf" --> aktiviert großes Textfeld und Text erscheint "gebe hier den Text aus dem CV ein / kopiere den Text aus dem Lebenslauf in dieses Textfeld.
+Klick auf "okay" shickt folgenden Prompt. "in [] erhälst du einen Lebenslauf eines Kandidaten. Erstelle eine Tabelle mit de Spalten "Namen", "Nachname", "Rolle" etc. und befülle diese Tabelle mit den Daten aus dem Lebenslauf. Gib die Tabelle als Outuput aus.
+
+[]
